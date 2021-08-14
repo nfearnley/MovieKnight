@@ -5,10 +5,10 @@ from sqlalchemy.orm import Session
 from discord import Client, Intents
 from discord_slash import SlashCommand, SlashContext, SlashCommandOptionType
 
-from .conf import authtoken
+from .conf import authtoken, dbpath
 from .models import Base, Movie
 
-engine = create_engine('sqlite:///:memory:', echo=True)
+engine = create_engine(f'sqlite:///{dbpath}', echo=True)
 Base.metadata.create_all(engine, checkfirst=True)
 
 bot = Client(intents=Intents.default())

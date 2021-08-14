@@ -17,6 +17,7 @@ def getDataDir():
 
 
 confpath = getDataDir() / "movieknight.conf"
+dbpath = getDataDir() / "movieknight.db"
 
 
 try:
